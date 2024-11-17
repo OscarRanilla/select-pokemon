@@ -1,1 +1,126 @@
 
+
+/*reset*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*Mi CSS*/
+body{
+	background-color: rgb(107, 150, 126);
+}
+
+h1{
+	font-size: 40px;
+	color: bisque;
+}
+.container{
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 80px;
+	gap:50px
+}
+
+/**/
+#get-pokemon {
+    animation: btn 4s infinite; 
+	border-radius: 30px;
+	width: 160px;
+	background-color: cadetblue;
+	color: bisque;
+	border: 2px solid #00A4BD;
+	box-shadow: 6px 4px bisque;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+@keyframes btn {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+}
+
+
+.pokemon-form{
+	display: flex;
+	gap: 60px;
+}
+#pokemon-select{
+	border-radius: 30px;
+	width: 120px;
+	height: 30px;
+	background-color: cadetblue;
+	color: bisque;
+	font-size: 14px;
+	border: 2px solid #00A4BD;
+	box-shadow: 6px 4px bisque;
+	cursor: pointer;
+}
+
+
+/*div que contiene la imagen del pokemo y la información*/
+.divPokemon{
+    display: flex;
+	flex-direction: column;
+	border: 2px solid #97a2a3;
+	gap:20px;
+	width: auto;
+	align-items: center;
+	padding: 20px 20px 20px 20px;
+	background-color: rgb(72, 107, 95);
+
+}
+
+
+.divInf {
+	padding-bottom: 20px;
+}
+
+.divInf p{
+	color:bisque;
+	font-size: 20px;
+	padding-top: 10px;
+}
