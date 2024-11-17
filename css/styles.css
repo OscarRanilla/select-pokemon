@@ -1,126 +1,164 @@
-
-
-/*reset*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+/* Estilos globales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: #f5f5f5;
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('https://images.pexels.com/photos/18403858/pexels-photo-18403858/free-photo-of-controles-maquina-sala-de-juegos-salon-recreativo.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover; /* La imagen se cubre de forma proporcional */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-attachment: fixed; /* Le da el efecto parallax */
+    position: relative;
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
 }
 
-
-/*Mi CSS*/
-body{
-	background-color: rgb(107, 150, 126);
-}
-
-h1{
-	font-size: 40px;
-	color: bisque;
-}
-.container{
+/* Contenedor principal para centrar todo */
+.container {
     display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 80px;
-	gap:50px
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px; /* Máximo ancho para todos los contenedores */
+    margin: 0 auto; /* Centramos el contenedor en la pantalla */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
-/**/
-#get-pokemon {
-    animation: btn 4s infinite; 
-	border-radius: 30px;
-	width: 160px;
-	background-color: cadetblue;
-	color: bisque;
-	border: 2px solid #00A4BD;
-	box-shadow: 6px 4px bisque;
-	font-size: 14px;
-	cursor: pointer;
+/* Estilo para el título (Información de Pokémon) con fondo blanco */
+h1 {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    max-width: 800px; /* Máximo ancho igual que el contenedor principal */
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
-@keyframes btn {
-    0% { transform: scale(1); }
-    10% { transform: scale(1.1); }
-    20% { transform: scale(1); }
+/* Contenedor del formulario para seleccionar Pokémon */
+.pokemon-form {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px; /* Máximo ancho igual para todos los elementos */
+    z-index: 2;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
-
-.pokemon-form{
-	display: flex;
-	gap: 60px;
-}
-#pokemon-select{
-	border-radius: 30px;
-	width: 120px;
-	height: 30px;
-	background-color: cadetblue;
-	color: bisque;
-	font-size: 14px;
-	border: 2px solid #00A4BD;
-	box-shadow: 6px 4px bisque;
-	cursor: pointer;
+/* Estilo del formulario */
+select, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
 }
 
+/* Botón */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
 
-/*div que contiene la imagen del pokemo y la información*/
-.divPokemon{
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Estilo para el div que muestra la información del Pokémon */
+.divPokemon {
     display: flex;
-	flex-direction: column;
-	border: 2px solid #97a2a3;
-	gap:20px;
-	width: auto;
-	align-items: center;
-	padding: 20px 20px 20px 20px;
-	background-color: rgb(72, 107, 95);
-
+    flex-direction: column; /* Cambié a columna para que imagen y texto estén centrados verticalmente */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 800px; /* Máximo ancho igual para todos los elementos */
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
+/* Contenedor de la imagen del Pokémon */
+.divImg {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+}
 
+.divImg img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.divImg img:hover {
+    transform: scale(1.1);
+}
+
+/* Contenedor de la información del Pokémon */
 .divInf {
-	padding-bottom: 20px;
+    flex: 2;
+    padding: 10px;
+    text-align: center; /* Centrar el texto */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.divInf p{
-	color:bisque;
-	font-size: 20px;
-	padding-top: 10px;
+/* Estilo para los párrafos de información del Pokémon */
+.divInf p {
+    margin: 8px 0;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Estilo para el nombre y otros textos importantes */
+.divInf p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .divPokemon {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .divImg {
+        margin-bottom: 15px;
+    }
+
+    .divInf {
+        text-align: center;
+    }
 }
